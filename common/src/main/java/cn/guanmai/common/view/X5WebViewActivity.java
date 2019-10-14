@@ -227,7 +227,7 @@ public class X5WebViewActivity extends AppCompatActivity {
 
             @Override
             public void onInstallFinish(int i) {
-                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
                     RebootDialogFragment dialog = new RebootDialogFragment(new RebootDialogFragment.RebootDialogListener() {
                         @Override
                         public void onReboot() {
