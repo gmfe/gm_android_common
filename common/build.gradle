@@ -28,7 +28,5 @@ dependencies {
     api 'com.github.gmfe:JsBridge-android:v1.0.0'
     api 'com.blankj:utilcodex:1.25.9'
     api 'com.pgyersdk:sdk:3.0.7'
-    api "org.permissionsdispatcher:permissionsdispatcher:4.5.0"
-    annotationProcessor "org.permissionsdispatcher:permissionsdispatcher-processor:4.5.0"
     implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
 }

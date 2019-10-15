@@ -1,6 +1,5 @@
 package cn.guanmai.common.view;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,17 +27,13 @@ import com.tencent.smtt.sdk.WebViewClient;
 
 import java.util.HashMap;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.guanmai.common.R;
 import cn.guanmai.common.dialog.EnvDialogFragment;
 import cn.guanmai.common.dialog.RebootDialogFragment;
 import cn.guanmai.common.dialog.UpdateDialogFragment;
 import cn.guanmai.jsbridge.X5WebView;
-import permissions.dispatcher.NeedsPermission;
-import permissions.dispatcher.RuntimePermissions;
 
-@RuntimePermissions
 public class X5WebViewActivity extends AppCompatActivity {
 
     public static final int SHOW_ENV_DIALOG = 1;
@@ -88,17 +83,9 @@ public class X5WebViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_x5webview);
 
         initX5WebView();
-        initView();
-        X5WebViewActivityPermissionsDispatcher.getPermissionWithPermissionCheck(this);
-        checkUpdate();
     }
 
-    @NeedsPermission({Manifest.permission.WRITE_EXTERNAL_STORAGE})
-    void getPermission() {
-        Log.e("TAG", "permission granted");
-    }
-
-    public void checkUpdate() {
+    public void pgyerCheckUpdate() {
         new PgyUpdateManager.Builder()
                 .setForced(false)
                 .setUserCanRetry(true)
@@ -141,13 +128,7 @@ public class X5WebViewActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        X5WebViewActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
-    }
-
-    private void initView() {
+    public void initView() {
         if (!mConfig.isOnlyCanSwitchUrlInDebug() || AppUtils.isAppDebug()) {
             String url = SPUtils.getInstance().getString(HOME_PAGE_KEY, mConfig.getUrl());
             if (!StringUtils.isSpace(url)) {
