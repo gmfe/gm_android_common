@@ -43,6 +43,9 @@ public class X5WebViewActivity extends AppCompatActivity {
     private ProgressBar mProgressBar;
 
     public X5WebView getWebView() {
+        if (mWebView == null) {
+            mWebView = findViewById(R.id.x5_webview);
+        }
         return mWebView;
     }
 
