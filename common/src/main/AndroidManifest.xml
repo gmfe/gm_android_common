@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.guanmai.common">
 
-    <application android:name=".CommonApplication">
+    <application>
         <activity android:name=".view.X5WebViewActivity"></activity>
     </application>
 
