@@ -27,14 +27,14 @@ import com.tencent.smtt.sdk.WebViewClient;
 
 import java.util.HashMap;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 import cn.guanmai.common.R;
 import cn.guanmai.common.dialog.EnvDialogFragment;
 import cn.guanmai.common.dialog.RebootDialogFragment;
 import cn.guanmai.common.dialog.UpdateDialogFragment;
 import cn.guanmai.jsbridge.X5WebView;
 
-public class X5WebViewActivity extends AppCompatActivity {
+public class X5WebViewActivity extends FragmentActivity {
 
     public static final int SHOW_ENV_DIALOG = 1;
     public static final String HOME_PAGE_KEY = "home_page";
