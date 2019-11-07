@@ -34,6 +34,7 @@ import cn.guanmai.common.dialog.RebootDialogFragment;
 import cn.guanmai.common.dialog.UpdateDialogFragment;
 import cn.guanmai.jsbridge.X5WebView;
 
+// 使用 AppCompatActivity android5 以下会报错，关闭增量编译也可以解决 enableAapt2=false
 public class X5WebViewActivity extends FragmentActivity {
 
     public static final int SHOW_ENV_DIALOG = 1;
