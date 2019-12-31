@@ -1,6 +1,8 @@
 package cn.guanmai.common.view;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -157,6 +159,11 @@ public class X5WebViewActivity extends FragmentActivity {
         mWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView webView, String s) {
+                if (s.startsWith("tel:")) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(s));
+                    startActivity(intent);
+                    return true;
+                }
                 webView.loadUrl(s);
                 return true;
             }
